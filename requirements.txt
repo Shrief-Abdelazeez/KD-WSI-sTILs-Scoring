@@ -1,0 +1,27 @@
+# Minimal requirements for KD WSI-level stromal TILs scoring pipeline
+# Recommended Python version: 3.9.18
+# Main framework reported in the article:
+# TensorFlow 2.10.1 + Keras 2.10.0
+
+tensorflow==2.10.1
+keras==2.10.0
+
+# Numerical computing and data handling
+numpy==1.26.0
+pandas==2.1.1
+scipy==1.11.3
+
+# Image and WSI processing
+opencv-python==4.8.1.78
+openslide-python==1.3.1
+Pillow==10.0.1
+
+# Output files and progress bars
+openpyxl==3.1.2
+tqdm==4.66.1
+
+# HDF5 model weights support
+h5py==3.9.0
+
+# TensorFlow compatibility helper
+protobuf==3.19.6

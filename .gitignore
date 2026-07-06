@@ -1,0 +1,22 @@
+# data and outputs
+Inputs/*
+!Inputs/.gitkeep
+
+Models/*
+!Models/.gitkeep
+!Models/tumor_stroma_fastscnn_kd.weights.h5
+!Models/tils_fastscnn_kd.weights.h5
+
+Outputs/*
+!Outputs/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
