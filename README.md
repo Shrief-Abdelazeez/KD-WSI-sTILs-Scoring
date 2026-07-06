@@ -32,13 +32,16 @@ The figure below illustrates the area-based stromal TILs scoring step used after
 
 ```text
 KD_WSI_sTILs_Scoring_GitHub/
-├── Inputs/                  # Put WSI files here
-├── Models/                  # Put KD model weights here
+├── Inputs/                  # Input WSI files
+├── Models/                  # Included KD model weights
+│   ├── tumor_stroma_fastscnn_kd.weights.h5
+│   └── tils_fastscnn_kd.weights.h5
 ├── Outputs/                 # Per-slide outputs and summary files
 ├── Figures/                 # Framework and scoring workflow figures
 │   ├── framework_overview.png
 │   └── stromal_tils_scoring_workflow.png
 ├── Scripts/                 # Pipeline scripts
+│   ├── Fast_SCNN_Model.py
 │   ├── config.py
 │   ├── inference.py
 │   ├── model_utils.py
@@ -54,26 +57,18 @@ KD_WSI_sTILs_Scoring_GitHub/
 └── README.md
 ```
 
-## Required model files
+## Included model and architecture files
 
-Place your KD model weights in `Models/` using these default filenames:
+This release includes the KD FastSCNN model weights and the FastSCNN architecture file used by the inference pipeline.
 
 ```text
 Models/tumor_stroma_fastscnn_kd.weights.h5
 Models/tils_fastscnn_kd.weights.h5
-```
-
-The pipeline also requires the FastSCNN architecture used during training. Copy your architecture file into `Scripts/` as:
-
-```text
 Scripts/Fast_SCNN_Model.py
 ```
 
-It must contain:
+The default configuration loads these files automatically when running the pipeline. The architecture file contains the `build_fast_scnn(...)` function used to reconstruct the KD models before loading the saved weights.
 
-```python
-build_fast_scnn(...)
-```
 
 ## Installation
 
